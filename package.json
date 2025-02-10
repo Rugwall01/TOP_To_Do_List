@@ -1,7 +1,7 @@
 {
-  "name": "webpack_template_1",
+  "name": "top_to_do_list",
   "version": "1.0.0",
-  "description": "webpack setup template number 1",
+  "description": "TOP Project: To Do List",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,17 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Rugwall01/webpack_Template_1.git"
+    "url": "git+ssh://git@github.com/Rugwall01/TOP_To_Do_List.git"
   },
   "author": "Rugwall01",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rugwall01/webpack_Template_1/issues"
+    "url": "https://github.com/Rugwall01/TOP_To_Do_List/issues"
   },
-  "homepage": "https://github.com/Rugwall01/webpack_Template_1#readme",
+  "homepage": "https://github.com/Rugwall01/TOP_To_Do_List#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
-    "file-loader": "^6.2.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
