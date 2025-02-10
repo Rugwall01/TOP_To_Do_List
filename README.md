@@ -1,2 +1,2 @@
-# webpack_Template_1
-My custom webpack configuration to start off a project.
+# TOP Project: To_Do_List
+Constructed using the principles of OOP, SOLID, Module Pattern, Factory functions, webpack, etc..
