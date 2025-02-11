@@ -27,6 +27,49 @@
 }
 
 
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    /* font: inherit; */
+    overflow-wrap: break-word;
+  }
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -65,13 +108,23 @@ body {
 
 .displayCard {
     box-sizing: border-box;
-    height: 50px;
+    height: fit-content;
+    max-height: 65px;
     padding: 4px 15px 35px 15px; 
     border: 7px solid rgba(169, 169, 169, 0.068);
     outline: 1px solid rgba(169, 169, 169, 0.644);
     background-color: rgba(211, 211, 211, 0.342);
     /* background-color: rgba(199, 8, 8, 0.534); */
     border-radius: 6px;
+    overflow: hidden;
+    /* overflow-wrap: break-word; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.displayCard:hover {
+    background-color: rgba(211, 211, 211, 0.699);
+
 }
 
 .taskSpan1 {
@@ -85,4 +138,20 @@ body {
 
 .taskSpan2, .descSpan2 {
     font-family: 'ArvoItalic';
+}
+
+#itemDesc {
+    min-width: 220px;
+}
+
+#itemName {
+    min-width: 190px;
+}
+
+input::placeholder {
+    font-family: 'Consolas', 'Courier', 'Courier New', 'UI Monospace', 'IBM Plex Mono';
+}
+
+textarea::placeholder {
+    font-family: 'Consolas', 'Courier', 'Courier New', 'UI Monospace', 'IBM Plex Mono';
 }
