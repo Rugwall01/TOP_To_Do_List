@@ -1,8 +1,32 @@
 
+import "./styles.css";
+
 const page = document.querySelector('body');
+
+const controls = document.createElement('div');
+controls.classList.add('inputControls');
 
 const content = document.createElement('div');
 content.classList.add('content');
+
+const nameInput = document.createElement('input');
+nameInput.type = 'text';
+nameInput.id = 'itemName';
+nameInput.name = 'itemNameInp';
+
+
+const descInput = document.createElement('input');
+descInput.type = 'textarea';
+descInput.id = 'itemDesc';
+descInput.name = 'itemDescInp';
+
+
+const submitBtn = document.createElement('button');
+submitBtn.id = 'submitBtn';
+submitBtn.name = 'subBtn';
+
+
+
 
 const logger = (state) => ({ log: () => console.log(`${state.item}:\n ${state.description}`) });
 const deleter = (state) => ({ delete: () => TD_Library.splice(state, 1) });
@@ -28,30 +52,32 @@ const toDoItem = (item, description) => {
     )
 } 
 
-let itemName = "Complete Modules";
-let itemDescription = "Go through The Odin Project at your current section and complete at least two modules";
-
-const item1 = toDoItem(itemName, itemDescription);
-item1.log();
-item1.add();
-console.log(TD_Library);
-item1.display();
-console.log(TD_Library);
-item1.delete();
-console.log(TD_Library);
+// let itemName = "Complete Modules";
+// let itemDescription = "Go through The Odin Project at your current section and complete at least two modules";
 
 
-const item2 = toDoItem(itemName, itemDescription);
-const item3 = toDoItem(itemName, itemDescription);
-const item4 = toDoItem(itemName, itemDescription);
 
-item2.add();
-console.log(TD_Library);
-console.log(JSON.stringify(TD_Library));
-console.log(structuredClone(TD_Library));
-item3.add();
-console.log(TD_Library);
 
-TD_Library.forEach((listItem) => content.append(JSON.stringify(listItem)));
 
-page.append(content);
+// const item1 = toDoItem(itemName, itemDescription);
+// const item2 = toDoItem(itemName, itemDescription);
+// const item3 = toDoItem(itemName, itemDescription);
+// const item4 = toDoItem(itemName, itemDescription);
+
+submitBtn.addEventListener('click', () => {
+    let itemName = nameInput.value;
+    let itemDescription = descInput.value;
+
+    const item = toDoItem(itemName, itemDescription);
+    item.add(); 
+    content.innerHTML = '';
+
+    TD_Library.forEach((listItem) => content.append(JSON.stringify(listItem)));
+});
+
+
+controls.append(nameInput, descInput, submitBtn);
+
+
+
+page.append(controls, content);
