@@ -1,6 +1,7 @@
 
 import "./styles.css";
 
+
 const page = document.querySelector('body');
 
 const controls = document.createElement('div');
@@ -11,12 +12,13 @@ content.classList.add('content');
 
 const nameInput = document.createElement('input');
 nameInput.type = 'text';
+nameInput.placeholder = "Name your task here...";
 nameInput.id = 'itemName';
 nameInput.name = 'itemNameInp';
 
 
-const descInput = document.createElement('input');
-descInput.type = 'textarea';
+const descInput = document.createElement('textarea');
+descInput.placeholder = "Write your task here...";
 descInput.id = 'itemDesc';
 descInput.name = 'itemDescInp';
 
@@ -36,6 +38,9 @@ const displayer = (state) => ({ display: () => console.table(`${state.itemNum}: 
 const TD_Library = [];
 
 
+const display = () => TD_Library.forEach((listItem) => content.append(JSON.stringify(listItem)));
+
+
 const toDoItem = (item, description) => {
     let state = {
         item,
@@ -52,17 +57,6 @@ const toDoItem = (item, description) => {
     )
 } 
 
-// let itemName = "Complete Modules";
-// let itemDescription = "Go through The Odin Project at your current section and complete at least two modules";
-
-
-
-
-
-// const item1 = toDoItem(itemName, itemDescription);
-// const item2 = toDoItem(itemName, itemDescription);
-// const item3 = toDoItem(itemName, itemDescription);
-// const item4 = toDoItem(itemName, itemDescription);
 
 submitBtn.addEventListener('click', () => {
     let itemName = nameInput.value;
@@ -70,14 +64,12 @@ submitBtn.addEventListener('click', () => {
 
     const item = toDoItem(itemName, itemDescription);
     item.add(); 
-    content.innerHTML = '';
 
-    TD_Library.forEach((listItem) => content.append(JSON.stringify(listItem)));
+    content.innerHTML = '';
+    display();
 });
 
 
+
 controls.append(nameInput, descInput, submitBtn);
-
-
-
 page.append(controls, content);
