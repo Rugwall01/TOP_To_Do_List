@@ -55,7 +55,7 @@ const pageSet = (function () {
     const display = () => {
         TD_Library.forEach((listItem) => {
             const index = TD_Library.indexOf(listItem);
-            cardArray[index].innerHTML = `Task: ${listItem.item} <br> Description: ${listItem.description}`;
+            cardArray[index].innerHTML = `<span class="taskSpan1">TASK:</span> <span class="taskSpan2">${listItem.item}</span> <br> <span class="descSpan1">DESCRIPTION:</span> <span class="descSpan2">${listItem.description}</span>`;
             content.append(cardArray[index]);
     });
     }
