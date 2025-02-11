@@ -10,11 +10,12 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    /* justify-content: space-around; */
+    align-items: left;
     height: 70%;
     width: 50%;
     border: 1px solid red;
+    overflow: auto;
 }
 
 .inputControls {
@@ -30,4 +31,12 @@ body {
 #submitBtn {
     width: 15%;
     height: 7.5%;
+}
+
+.displayCard {
+    box-sizing: border-box;
+    height: 50px;
+    padding: 4px 15px 4px 15px; 
+    border: 8px solid rgba(169, 169, 169, 0.048);
+    background-color: rgba(211, 211, 211, 0.199);
 }
