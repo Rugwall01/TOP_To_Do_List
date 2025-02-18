@@ -1,0 +1,20 @@
+set up creation and storage of item objects
+set up appention to the screen
+styled screen into body with controls and content section
+
+
+next steps:
+    to style the content box to allow overflow,
+    to style each content card/line to look good and properly display info,
+    to add and style functionality in each card/line to be able to:
+            mark important/normal (CHANGE TEXT COLOR OR BACKGROUND AS RESULT)
+            mark complete (checkmark or line-through visual)
+            delete from the list and re-number all entries
+
+    to add a date and time input in controls that stamps it to the card/line
+    to add functionality to create separate projects and have them displayed as switchable tabs
+    
+
+    create interface or otherwise to manage data through local storage API.
+
+    make the card/lines expandable so the description shows upon expansion.
